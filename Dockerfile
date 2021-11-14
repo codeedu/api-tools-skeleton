@@ -24,7 +24,7 @@
 FROM php:7.4-apache
 
 RUN apt-get update \
- && apt-get install -y git zlib1g-dev libzip-dev libicu-dev \
+ && apt-get install -y git zlib1g-dev libzip-dev libicu-dev sqlite3 libsqlite3-dev \
  && docker-php-ext-install zip intl \
  && a2enmod rewrite \
  && sed -i 's!/var/www/html!/var/www/public!g' /etc/apache2/sites-available/000-default.conf \

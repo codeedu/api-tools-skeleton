@@ -11,3 +11,6 @@ data/cache/*
 .history/
 .composer/
 .bash_history
+test.sqlite
+.idea
+.sqlite_history
