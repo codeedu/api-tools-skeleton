@@ -25,7 +25,7 @@ FROM composer:2 AS get-composer
 FROM php:8.2-apache
 
 RUN apt-get update \
- && apt-get install -y git libzip-dev libicu-dev \
+ && apt-get install -y git libzip-dev libicu-dev sqlite3\
  && docker-php-ext-install zip \
  && docker-php-ext-configure intl \
  && docker-php-ext-install intl \
@@ -37,3 +37,13 @@ RUN apt-get update \
 COPY --from=get-composer /usr/bin/composer /usr/local/bin/composer
 
 WORKDIR /var/www
+
+COPY .docker/entrypoint.sh /
+RUN chmod +x /entrypoint.sh
+
+RUN usermod -u 1000 www-data
+
+USER www-data
+
+ENTRYPOINT [ "/entrypoint.sh" ]
+CMD [ "apache2-foreground" ]

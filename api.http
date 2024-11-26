@@ -1,0 +1,18 @@
+GET http://localhost:8080/customers
+Accept: application/vnd.ecommerce.v1+json
+Content-Type: application/vnd.ecommerce.v1+json
+
+# formato de resposta com versionamento
+
+###
+POST http://localhost:8080/customers
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": ""
+}
+
+###
+GET http://localhost:8080/customers/1
+Accept: application/vnd.test.v1+json
