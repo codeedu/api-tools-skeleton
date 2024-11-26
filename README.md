@@ -1,5 +1,9 @@
 # API Tools usada no módulo de Comunicação do curso FullCycle
 
+## ######## Aviso ########
+
+Este repositório foi arquivado em detrimento do [https://github.com/devfullcycle/api-tools-skeleton](https://github.com/devfullcycle/api-tools-skeleton).
+
 ## Rodar a aplicação
 
 Rode o comando
